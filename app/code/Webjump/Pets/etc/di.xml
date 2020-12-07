@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Webjump\Pets\Api\PetRepositoryInterface" type="Webjump\Pets\Model\PetRepository" />
+    <preference for="Webjump\Pets\Api\Data\PetInterface" type="Webjump\Pets\Model\Pet" />
+    <preference for="Webjump\Pets\Api\Data\PetSearchResultInterface" type="Webjump\Pets\Model\PetSearchResult" />
+
+    <virtualType name="Webjump\Pets\Model\ResourceModel\Collection\Grid\PetColletion"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">pet_kind</argument>
+            <argument name="resourceModel"
+                      xsi:type="string">Webjump\Pets\Model\ResourceModel\Pet</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="webjump_pet_listing_data_source"
+                      xsi:type="string">Webjump\Pets\Model\ResourceModel\Collection\Grid\PetColletion</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Magento\Customer\Api\CustomerRepositoryInterface">
+        <plugin name="CustomerRepositoryExtensionAttributeOperations" type="Webjump\Pets\Plugin\CustomerRepositoryPlugin"/>
+    </type>
+
+    <type name="Magento\Customer\Api\Data\CustomerInterface">
+        <plugin name="CustomerExtensionAttributeOperations" type="Webjump\Pets\Plugin\CustomerAttributesLoad"/>
+    </type>
+</config>

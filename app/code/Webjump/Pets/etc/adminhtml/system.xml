@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+<!--    <system>-->
+<!--        <section id="pets" showInDefault="1" showInWebsite="0" showInStore="1" sortOrder="10" translate="label">-->
+<!--            <label>Pets</label>-->
+<!--            <tab>Pets</tab>-->
+<!--            <resource>Webjump_Pets::menu</resource>-->
+
+<!--            <group id="visible" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">-->
+<!--                <label>Visible</label>-->
+<!--                <comment>An additional comment helping users to understand the effect when configuring the fields defined in this group.</comment>-->
+
+<!--                <field id="is_visible" translate="label" sortOrder="10" showInDefault="0" showInWebsite="0" showInStore="1" type="select">-->
+<!--                    <label>Enabled</label>-->
+<!--                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>-->
+<!--                </field>-->
+<!--            </group>-->
+<!--        </section>-->
+<!--    </system>-->
+    <system>
+        <section id="pet_customer" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Pets</label>
+            <tab>customer</tab>
+            <resource>Magento_Customer::config_customer</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Pet is visible</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+
+</config>

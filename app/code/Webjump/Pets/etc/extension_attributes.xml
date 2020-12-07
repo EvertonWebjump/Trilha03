@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <extension_attributes for="Magento\Customer\Api\Data\CustomerInterface">
+        <attribute code="pet_kind" type="Webjump\Pets\Api\Data\PetInterface" />
+    </extension_attributes>
+</config>

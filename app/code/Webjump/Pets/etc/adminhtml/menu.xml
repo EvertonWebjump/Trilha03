@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Webjump_Pets::menu" title="Pet" translate="title" module="Webjump_Pets" sortOrder="20" resource="Magento_Backend::admin"/>
+        <add id="Webjump_Pets::create" title="Create" module="Webjump_Pets" sortOrder="10" parent="Webjump_Pets::menu" action="webjump_pets/create/index" resource="Webjump_Pets::create"/>
+        <add id="Webjump_Pets::delete" title="Delete" module="Webjump_Pets" sortOrder="20" parent="Webjump_Pets::menu" action="webjump_pets/delete/index" resource="Webjump_Pets::delete"/>
+        <add id="Webjump_Pets::index" title="View" module="Webjump_Pets" sortOrder="30" parent="Webjump_Pets::menu" action="webjump_pets/pets/index" resource="Webjump_Pets::view"/>
+    </menu>
+</config>
